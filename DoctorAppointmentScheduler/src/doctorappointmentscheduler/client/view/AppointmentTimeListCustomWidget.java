@@ -1,4 +1,9 @@
-package com.example.client.view;
+package doctorappointmentscheduler.client.view;
+
+/* A custom widget created using ListBox GWT original widget in order 
+ * to list available times for an appointment
+ */
+
 
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.ui.ListBox;

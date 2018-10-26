@@ -1,4 +1,4 @@
-package com.example.client.view;
+package doctorappointmentscheduler.client.view;
 
 /* A custom widget created using the DatePicker GWT original widget in order to display a calendar
  * view of available and unavailable dates for appointments.
@@ -65,7 +65,10 @@ public class AppointmentCalendarCustomWidget extends DatePicker {
 		   //sets calendar
 		   setUnavailableDates(startUnavailableDate,endUnavailableDate);   
 		   setAvailableDates(startAvailableDate,endAvailableDate); 
+		      
 	   }	
+	   
+	
 }
 
 
