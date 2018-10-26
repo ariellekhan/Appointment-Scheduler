@@ -8,7 +8,7 @@
   <!-- Servlets -->
   <servlet>
     <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.appointment.doctor.server.GreetingServiceImpl</servlet-class>
+    <servlet-class>doctorappointmentscheduler.server.GreetingServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>

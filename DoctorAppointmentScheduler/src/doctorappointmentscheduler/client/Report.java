@@ -1,5 +1,5 @@
 package doctorappointmentscheduler.client;
 
-public class Record {
+public class Report {
 
 }
