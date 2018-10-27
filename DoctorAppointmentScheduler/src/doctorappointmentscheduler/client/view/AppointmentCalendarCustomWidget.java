@@ -31,19 +31,6 @@ public class AppointmentCalendarCustomWidget extends DatePicker {
 		      }
 	   }
 	   
-	   //sets the color for a single available date in the calendar widget
-	   public void setAvailableDate(Date date) {
-		   this.addStyleToDates("available-date", date);
-	   }
-	   
-	   //sets the color for the unavailable dates in the calendar widget using a range
-	   public void setUnavailableDates(Date startDate, Date endDate) {
-		   
-		   for (final Date date = startDate; date.compareTo(endDate) <= 0; CalendarUtil.addDaysToDate(date, 1)) { 
-			   this.addStyleToDates("unavailable-date", date);
-		      }
-	   }
-	   
 	   //sets the color for a single unavailable date in the calendar widget
 	   public void setUnavailableDate(Date date) {
 		   this.addStyleToDates("unavailable-date", date);
