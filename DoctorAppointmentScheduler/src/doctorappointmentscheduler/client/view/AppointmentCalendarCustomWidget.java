@@ -5,7 +5,6 @@ package doctorappointmentscheduler.client.view;
  */
 
 import java.util.Date;
-
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.datepicker.client.CalendarModel;
 import com.google.gwt.user.datepicker.client.CalendarUtil;
