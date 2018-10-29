@@ -5,6 +5,7 @@ package doctorappointmentscheduler.client.view;
  */
 
 import java.util.Date;
+
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.datepicker.client.CalendarModel;
 import com.google.gwt.user.datepicker.client.CalendarUtil;
@@ -22,6 +23,7 @@ public class AppointmentCalendarCustomWidget extends DatePicker {
 		super(monthAndYearSelector, view, model);
 	}
 	
+	
 	//sets the color for the available dates in the calendar widget using a range
 	public void setAvailableDates(Date startDate, Date endDate) {
 		   
@@ -29,8 +31,8 @@ public class AppointmentCalendarCustomWidget extends DatePicker {
 			   this.addStyleToDates("available-date", date);
 		      }
 	   }
-
-//sets the color for a single available date in the calendar widget
+	   
+	   //sets the color for a single available date in the calendar widget
 	   public void setAvailableDate(Date date) {
 		   this.addStyleToDates("available-date", date);
 	   }
