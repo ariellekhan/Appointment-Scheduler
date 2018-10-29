@@ -14,5 +14,5 @@ public interface AppointmentDao {
 
   void deleteReport(Long reportId) throws SQLException;
 
-  AppointmentsResult<Appointment> listAppointments() throws SQLException;
+  AppointmentList<Appointment> listAppointments() throws SQLException;
 }
