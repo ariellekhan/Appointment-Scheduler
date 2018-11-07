@@ -45,12 +45,15 @@ public class BookAppointmentView extends Composite implements BookAppointmentPre
 	@UiField
 	HorizontalPanel mainHPanel;
 	
+	
+	
 	private AppointmentCalendarCustomWidget appointmentCalendar;
 	private AppointmentTimeListCustomWidget appointmentTime;
 	
 	
 
 	public BookAppointmentView() {
+	
 		initWidget(uiBinder.createAndBindUi(this));
 		
 		
@@ -62,10 +65,7 @@ public class BookAppointmentView extends Composite implements BookAppointmentPre
 		
 		mainHPanel.setSpacing(40);
 		mainVPanel.setSpacing(20);
-		
-		
 		dateVPanel.add(appointmentCalendar);
-		
 		
 		timeVPanel.add(appointmentTime);
 		
@@ -85,12 +85,32 @@ public class BookAppointmentView extends Composite implements BookAppointmentPre
 
 	@Override
 	public HasValueChangeHandlers<Date> getValueChangeHandler() {
+		
 		return appointmentCalendar;
+		
 	}
 
 	@Override
 	public void setDateLabel(String dateString) {
         appointmentDateLabel.setText(dateString);
+	}
+
+
+	@Override
+	public String getDateStyle(Date date) {
+		return appointmentCalendar.getStyleOfDate(date);
+	}
+
+
+	@Override
+	public String getDateText() {
+		return appointmentDateLabel.getText();
+	}
+
+
+	@Override
+	public String getTimeText() {
+		return appointmentTime.getSelectedItemText();
 	}
 
 
