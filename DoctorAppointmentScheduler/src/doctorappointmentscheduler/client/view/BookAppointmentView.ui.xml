@@ -1,15 +1,35 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:res ='urn:with:doctorappointmentscheduler.client.view.BookAppointmentResources'>
+   
 	<ui:style>
 	.important {
 		font-weight: bold;
 	}
+	.headings{
+	font-weight: bold;
+	color: blue;
+    text-align: right;
+
+	}
 	</ui:style>
-
+						    <!-- comments -->						
 	<g:HTMLPanel>
-
 		<g:VerticalPanel ui:field="mainVPanel">
+			<g:VerticalPanel ui:field="menuVPanel">
+				<g:MenuBar ui:field="menu">
+        			<g:MenuItem ui:field="bookAppointmentMenuItem">Book Appointment</g:MenuItem>
+        			<g:MenuItem ui:field="recordsMenuItem">Records</g:MenuItem>
+        			<g:MenuItem ui:field="loginMenuItem">
+						Login
+						<g:MenuBar><g:MenuItem ui:field="logoutInnerMenuItem">Logout</g:MenuItem></g:MenuBar>
+					</g:MenuItem>
+				</g:MenuBar>
+			</g:VerticalPanel>
+			<g:VerticalPanel>
+				<g:Label text = "Book Appointment" styleName="{style.headings}" />
+			</g:VerticalPanel>
 			<g:HorizontalPanel ui:field="mainHPanel">
 				<g:VerticalPanel ui:field= "dateVPanel">
 				<g:HorizontalPanel><g:Label>Select Date: </g:Label><g:Label ui:field="appointmentDateLabel"></g:Label> </g:HorizontalPanel>
@@ -23,8 +43,8 @@
 			
 
 			</g:HorizontalPanel>
-			<g:Button ui:field="submitButton">Book Appointment</g:Button>
-		
+			<g:Button ui:field="submitButton">Next</g:Button>
+			
 		</g:VerticalPanel>
 
 		
