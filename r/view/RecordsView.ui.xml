@@ -1,0 +1,49 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:style>
+	
+		.important {
+			font-weight: bold;
+		}
+	
+		.headings{
+			font-family: Arial;
+			display:block;
+			font-weight: bold;
+			color: grey;
+    		text-align: center;
+    		font-size: 2em;
+    		font-style: italic;
+    		text-decoration: underline;
+    		margin-left: 50px;
+		}
+	
+		.labels{
+			font-weight: bold;
+			font-size: 17px;
+		}
+		
+	</ui:style>
+	
+	<g:HTMLPanel>
+		
+		<g:VerticalPanel ui:field="mainVPanel">
+			<g:VerticalPanel>
+				<g:Label text = "Patients Records" styleName="{style.headings}" />
+			</g:VerticalPanel>
+			
+			<g:VerticalPanel ui:field="cellVPanel">
+			</g:VerticalPanel>
+			
+			<g:VerticalPanel>
+				<g:HorizontalPanel> 
+			 		<g:Label text = "Search:" styleName="{style.labels}" /> <g:TextBox></g:TextBox> 
+				</g:HorizontalPanel>
+			</g:VerticalPanel>
+		</g:VerticalPanel>
+			 
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 
