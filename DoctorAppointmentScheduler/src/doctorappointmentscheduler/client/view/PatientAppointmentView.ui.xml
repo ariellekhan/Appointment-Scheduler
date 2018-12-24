@@ -1,0 +1,128 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:style>
+		.important {
+			font-weight: bold;
+		}
+		
+		.heading{
+			font-family: Arial;
+			display:block;
+			font-weight: bold;
+			color: grey;
+    		text-align: center;
+    		font-size: 2em;
+    		font-style: italic;
+    		text-decoration: underline;
+    		margin-left: 20px;
+		}
+		
+		.labels{
+			font-weight: bold;
+		}
+		
+		.inputBoxes{
+			display:inline-block;
+		}
+		
+		.HPanel{
+			width: 500px;
+		}
+		
+		.button {
+  			display: inline-block;
+  			padding: 10px 20px;
+  			font-size: 20px;
+  			cursor: pointer;
+  			text-align: center;
+  			text-decoration: none;
+  			outline: none;
+  			color: #fff;
+  			background-color: #7ED1D9;
+  			border: none;
+  			border-radius: 10px;
+  			box-shadow: 0 7px #999;
+		}
+		
+		.button:hover {
+			background-color: #82BFC5
+		}
+
+		.button:active {
+  			background-color: #77D1D9;
+  			box-shadow: 0 5px #666;
+  			transform: translateY(4px);
+		}
+	
+	</ui:style>
+	
+	<g:HTMLPanel >
+		
+		<g:VerticalPanel ui:field="vPanel" spacing="5" >
+			<g:Label styleName="{style.heading}">Patient's Appointment Form</g:Label>
+			
+			<g:Grid>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Appointment Date:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="dateTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Appointment Time:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="timeTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">First Name:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="fnameTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Last Name:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="lnameTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Email:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="emailTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Address:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="addressTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Contact Number:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="contactNoTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Date of Birth:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="dobTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Gender:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="genderTextLabel"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Weight:</g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="weightTextLabel" styleName="{style.labels}"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Height: </g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="heightTextLabel" styleName="{style.labels}"></g:Label></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Condition: </g:Label></g:customCell>
+					<g:customCell><g:TextArea ui:field="conditionTextArea" styleName="{style.inputBoxes}"></g:TextArea></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Current Medication: </g:Label></g:customCell>
+					<g:customCell><g:TextArea ui:field="currMedTextArea" styleName="{style.inputBoxes}"></g:TextArea></g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell><g:Label styleName="{style.labels}">Medical History: </g:Label></g:customCell>
+					<g:customCell><g:TextArea ui:field="medHistoryTextArea" styleName="{style.inputBoxes}"></g:TextArea></g:customCell>
+				</g:row>
+			</g:Grid>			
+		</g:VerticalPanel>
+			
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

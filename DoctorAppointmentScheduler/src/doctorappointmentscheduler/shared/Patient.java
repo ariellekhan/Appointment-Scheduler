@@ -1,70 +1,81 @@
 package doctorappointmentscheduler.shared;
-import java.util.Date;
 
-public class Patient{
-	    private String firstName;
-	    private String lastName;
-	    private Date dob;
-	    private String address;
-	    private int contactNumber;
-	    private String email;
-	    private double weight;
-	    private double height;
+/* Patient is a User Type for accessing the application */
 
-	    public void setName(String fname, String lname){
-	        this.firstName = fname;
-	        this.lastName = lname;  
-	    }
 
-	    public void setDOB(Date dob){
-	        this.dob = dob;
-	    }
+public class Patient implements UserType {
+	
+	//Instance variables
+	private String firstName;
+	private String lastName;
+	private String dob;
+	private String address;
+	private String contactNumber;
+	private String email;
+	private String gender;  
+	
+	//Constructor #1
+	public Patient(String firstName, String lastName, String dob, String email, String gender) {
+	    this. firstName = firstName;
+	    this.lastName = lastName;
+	    this.dob = dob;
+	    this.email = email;
+	    this.gender = gender;
+	}
+	    
+	//Constructor #2
+	public Patient(String firstName, String lastName, String dob, String email, String gender, String address, String contactNumber) {
+		this. firstName = firstName;
+	    this.lastName = lastName;
+	    this.dob = dob;
+	    this.email = email;
+	    this.gender = gender;
+	    this.address = address;
+	    this.contactNumber = contactNumber;
+	 }
+	
+	//Mutators
+	public void setAddress(String addr){
+		this.address = addr;
+	}
 
-	    public void setAddress(String addr){
-	        this.address = addr;
-	    }
+	public void setContactNo(String contactNum){
+		this.contactNumber = contactNum;
+	}
+	
+	//Accessors
+	public String getFirstName(){
+	    return this.firstName;
+	}
+	
+	public String getLastName(){
+	    return this.lastName;
+	}
 
-	    public void setContactNo(int contactNum){
-	        this.contactNumber = contactNum;
-	    }
+	public String getDOB(){
+	    return this.dob;
+	}
 
-	    public void setEmail(String email){
-	        this.email = email;
-	    }
+	public String getAddress(){
+	    return this.address;
+	}
 
-	    public void setWeight(double w){
-	        this.weight = w;
-	    }
+	public String getContactNo(){
+	    return this.contactNumber;
+	}
 
-	    public void setHeight(double h){
-	        this.height = h;
-	    }
+	public String getEmail(){
+	    return this.email;
+	}
 
-	    public String getName(){
-	        return firstName + lastName;
-	    }
-
-	    public Date getDOB(){
-	        return dob;
-	    }
-
-	    public String getAddress(){
-	        return address;
-	    }
-
-	    public int getContactNo(){
-	        return contactNumber;
-	    }
-
-	    public String getEmail(){
-	        return email;
-	    }
-
-	    public double getHeight(){
-	        return height;
-	    }
-
-	    public double getWeight(){
-	        return weight;
-	    }
+	public String getGender(){
+	    return this.gender;
+	}
+	
+	
+	@SuppressWarnings("unused")  
+	private Patient() {  
+	  //required here
+	}
+	
 }
