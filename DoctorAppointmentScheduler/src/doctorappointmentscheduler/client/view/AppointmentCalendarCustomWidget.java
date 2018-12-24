@@ -28,12 +28,14 @@ public class AppointmentCalendarCustomWidget extends DatePicker {
 	public void setAvailableDates(Date startDate, Date endDate) {
 		   
 		   for (final Date date = startDate; date.compareTo(endDate) <= 0; CalendarUtil.addDaysToDate(date, 1)) {
+			   this.removeStyleFromDates("unavailable-date", date);
 			   this.addStyleToDates("available-date", date);
 		      }
 	   }
 	   
 	   //sets the color for a single available date in the calendar widget
 	   public void setAvailableDate(Date date) {
+		   this.removeStyleFromDates("unavailable-date", date);
 		   this.addStyleToDates("available-date", date);
 	   }
 	   
@@ -41,12 +43,14 @@ public class AppointmentCalendarCustomWidget extends DatePicker {
 	   public void setUnavailableDates(Date startDate, Date endDate) {
 		   
 		   for (final Date date = startDate; date.compareTo(endDate) <= 0; CalendarUtil.addDaysToDate(date, 1)) { 
+			   this.removeStyleFromDates("available-date", date);
 			   this.addStyleToDates("unavailable-date", date);
 		      }
 	   }
 	   
 	   //sets the color for a single unavailable date in the calendar widget
 	   public void setUnavailableDate(Date date) {
+		   this.removeStyleFromDates("available-date", date);
 		   this.addStyleToDates("unavailable-date", date);
 	   }
 	   
@@ -63,9 +67,9 @@ public class AppointmentCalendarCustomWidget extends DatePicker {
 		   final Date endAvailableDate = format.parse("3000-12-31");
 		   
 		   //sets calendar
+		   this.removeStyleFromDates("datePickerDayIsToday", startAvailableDate);
 		   setUnavailableDates(startUnavailableDate,endUnavailableDate);   
-		   setAvailableDates(startAvailableDate,endAvailableDate); 
-		      
+		   setAvailableDates(startAvailableDate,endAvailableDate); 		     
 	   }	
 	   
 	
