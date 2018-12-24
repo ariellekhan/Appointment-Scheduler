@@ -67,7 +67,6 @@ public class AppointmentTimeListCustomWidget extends ListBox {
 	
 	
 	public void initTimeList() {
-		
 		//Default office hours
 		int openingTime = 9;
 		int closingTime = 5;
@@ -103,5 +102,19 @@ public class AppointmentTimeListCustomWidget extends ListBox {
 		}
 		
 	}
+	
+	public boolean isEmpty() {
+		if(this.getItemCount() == 0) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void removeTime() {
+		if(!isEmpty()) {
+			this.removeItem(this.getSelectedIndex());
+		}
+	}
+	
 
 }
