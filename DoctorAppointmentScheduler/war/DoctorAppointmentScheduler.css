@@ -1,19 +1,25 @@
 body {
    text-align: center;
    font-family: verdana, sans-serif;
+   
 }
 
-h1 {
-   font-size: 2em;
-   font-weight: bold;
-   color: #777777;
-   margin: 40px 0px 70px;
-   text-align: center;
+h2 {
+	font-family:  "Times New Roman", Times, serif;
+	font-size: 3em;
+	display:block;
+	font-weight: bold;
+	color: rgb(5, 97, 178,0.5);
+    text-align: center;
+	text-shadow: 2px 2px rgb(182, 182, 182,0.4);
+   
+
 }
 
 .gwt-DatePicker {
-   border: 1px solid #ccc;
-   border-top:1px solid #999;
+   border: 1px solid black;
+   border-top: 1px solid black;
+   box-shadow: 10px 10px rgb(182, 182, 182,0.6);
    cursor: default;
 }
 
@@ -28,7 +34,7 @@ h1 {
 
 .datePickerDays {
    width: 100%;
-   background: white;
+   background: rgb(254, 254, 254, 0.3);
 }
 
 .datePickerDay,
@@ -69,6 +75,7 @@ h1 {
 
 .datePickerDayIsValue {
    background: #d7dfe8;
+   background-color: rgb(126, 224, 254) !important; 
 }
 
 .datePickerDayIsDisabled {
@@ -126,6 +133,7 @@ td.datePickerMonth {
 
 .gwt-DateBox input {
    width: 8em;
+   
 }
 
 .dateBoxFormatError {
@@ -136,9 +144,52 @@ td.datePickerMonth {
 }
 
 .available-date{
-	background-color: green !important; 
+	background-color: green; 
 }
 
 .unavailable-date{
 	background-color: red !important; 
 }
+
+.mytransparent {
+  background: none;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: rgba(0,0,0, 0.6);
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+li a:hover:not(.active) {
+    background-color: #3D6AAF;
+}
+
+.active {
+    background-color: #111;
+}
+
+.menuItem {
+    background-color: rgb(1, 170, 254,0.7);
+}
+
