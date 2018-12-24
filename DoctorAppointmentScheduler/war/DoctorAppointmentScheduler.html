@@ -1,43 +1,36 @@
 <!doctype html>
-<!-- The DOCTYPE declaration above will set the     -->
-<!-- browser's rendering engine into                -->
-<!-- "Standards Mode". Replacing this declaration   -->
-<!-- with a "Quirks Mode" doctype is not supported. -->
+
 
 <html>
+
+  <!-- APPLICATION PAGE -->
+
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <!--                                                               -->
-    <!-- Consider inlining CSS to reduce the number of requested files -->
-    <!--                                                               -->
-    <link type="text/css" rel="stylesheet" href="DoctorAppointmentScheduler.css">
-
-    <!--                                           -->
-    <!-- Any title is fine                         -->
-    <!--                                           -->
-    <title>A "Hello, World!" MVP Example</title>
+    <link  rel="stylesheet" href="DoctorAppointmentScheduler.css">    
+ 
+    <title>Doctor's Appointment Scheduler</title>
     
-    <!--                                           -->
-    <!-- This script loads your compiled module.   -->
-    <!-- If you add any GWT meta tags, they must   -->
-    <!-- be added before this line.                -->
-    <!--                                           -->
     <script type="text/javascript" language="javascript" src="doctorappointmentscheduler/doctorappointmentscheduler.nocache.js"></script>
+
   </head>
 
-  <!--                                           -->
-  <!-- The body can have arbitrary html, or      -->
-  <!-- you can leave the body empty if you want  -->
-  <!-- to create a completely dynamic UI.        -->
-  <!--                                           -->
-  <body>
-
- 
-      <div id="temp" style="width: 35em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+  <body background = "res/images/mainbg.jpg" style=" background-size: 100%; background-repeat: no-repeat;">
+  	<h2>DR. RAYCHAUDHURI'S  OFFICE</h2>
+  			
+  	<ul id="appMenu">
+  		<li><a class="menuItem" href="#BookAppointmentPage">Book Appointment</a></li>
+  		<li><a class="menuItem" href="#DisplayAppointmentPage">View Appointments</a></li>
+   		<li><a class="menuItem" href="#RecordsPage">Records</a></li>
+  		<li style="float:right"><a class="menuItem" href="DoctorAppointmentScheduler.html">Logout</a></li>
+	</ul>
+	
+	<div id="menuPanel" style="width: 35em; position: relative; left: 50%; margin-left: -11em;"></div>
+	
+	<br>
+      
+    <div id="appPanel" style="width: 35em; position: relative; left: 50%; margin-left: -11em; background-color: rgba(255,255,255, 0.8); border: 3px solid black; padding: 4px; font-family: sans-serif">
      
-      </div>
-
-
   </body>
 </html>
