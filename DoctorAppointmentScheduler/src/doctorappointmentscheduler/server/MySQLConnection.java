@@ -75,9 +75,13 @@ public class MySQLConnection extends RemoteServiceServlet implements DBConnectio
 @Override
 public String createUser(UserType ut, String password) {
 	String resultMsg = "Error creating account, try again.";
-	try {  
-		 
-		 Statement stmt = conn.createStatement();
+	try {
+		  PreparedStatement ps = conn.prepareStatement("Select * from users where username = '" + ut.getEmail() +"';");
+		  ResultSet rs = ps.executeQuery(); 
+		  if(rs.next()) {
+			  return "Email already exists, please use another";
+		  }
+		  Statement stmt = conn.createStatement();
 	      
 	      String sql = "INSERT INTO users (username, loginpassword, usertype) ";
 	      String sql2;

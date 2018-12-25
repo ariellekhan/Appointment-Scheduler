@@ -3,7 +3,6 @@ package doctorappointmentscheduler.client.view;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.FileUpload;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -55,8 +54,6 @@ public class MakeReportView extends Composite implements MakeReportPresenter.Dis
 	TextBox weightTextBox;
 	@UiField 
 	TextArea conditionTextBox;
-	@UiField
-	FileUpload file;
 	@UiField
 	Button submitButton;
 	@UiField

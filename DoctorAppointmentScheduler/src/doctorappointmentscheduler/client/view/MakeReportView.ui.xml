@@ -116,10 +116,6 @@
 					<g:customCell><g:Label styleName="{style.labels}">Medical History: </g:Label></g:customCell>
 					<g:customCell><g:TextArea ui:field="medHistoryTextBox" styleName="{style.inputBoxes}"></g:TextArea></g:customCell>
 				</g:row>
-				<g:row>
-					<g:customCell><g:Label styleName="{style.labels}">Upload a file of symptom (Picture/Video/Etc)</g:Label></g:customCell>
-					<g:customCell><g:FileUpload ui:field="file"></g:FileUpload></g:customCell>
-				</g:row>
 				
 			</g:Grid>
 			<g:Label></g:Label>
