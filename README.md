@@ -40,3 +40,10 @@ location: DoctorAppointmentScheduler/src/doctorappointmentscheduler/server/MySQL
   3. Compile using GWT (Google Web Toolkit) compiler.
   4. Run as GWT Development Mode with Jetty. 
   5. Navigate to Web page.
+
+
+#### Google Web Toolkit Plugin Setup
+link for additional help: http://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html
+  1. Open Eclipse -> Help -> Eclipse Marketplace
+  2. Search using Find: GWT
+  3. GWT Eclipse Plugin 3.0.0 -> Install -> (select all boxes) -> confirm
