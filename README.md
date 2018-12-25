@@ -2,15 +2,15 @@
 
 ### Application Credentials
  Creating a user
-  1.To create a Doctor User 
+  1. To create a doctor user 
   
   Staff code is: doctor123 
   
-  2.To create an Administrative-Staff User
+  2. To create an Administrative-Staff User
   
   Staff code is: staff123 
   
- To change these access the file CreateAccountPresenter.java
+ To change these, access the file CreateAccountPresenter.java
  
  location: DoctorAppointmentScheduler/src/doctorappointmentscheduler/client/presenter/CreateAccountPresenter.java
 
@@ -35,8 +35,7 @@ location: DoctorAppointmentScheduler/src/doctorappointmentscheduler/server/MySQL
   3. mySQL database
 
 ### To run application:
-  1. Set up mySQL database.
-      run doctorbaseScript.sql
+  1. Set up mySQL database -- run doctorbaseScript.sql
   2. Import project from github to Eclipse.
   3. Compile using GWT (Google Web Toolkit) compiler.
   4. Run as GWT Development Mode with Jetty. 
