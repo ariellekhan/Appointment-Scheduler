@@ -31,7 +31,7 @@ public class MySQLConnection extends RemoteServiceServlet implements DBConnectio
  
 	/* ***************************** TODO ***************************************** */
 	private String user = "root";  ////Change to your MYSQL database user
-	private String pass = "sachin1123";  //Change to your mqSQL database password
+	private String pass = "admin123";  //Change to your mqSQL database password
 	private String hostname = "localhost"; //change to your server's host name
 	private String portNumber = "3306"; //change to your server's port number
  
