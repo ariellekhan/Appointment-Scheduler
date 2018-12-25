@@ -157,7 +157,10 @@ public class CreateAccountPresenter implements Presenter {
 
 				public void onSuccess(String str) { 
 					Window.alert(str);
-					eventBus.fireEvent(new CreateAccountEvent());		
+					if(str.equals("User successfully created")) {
+						eventBus.fireEvent(new CreateAccountEvent());
+					}
+							
 				}
 			});
 		}

@@ -31,7 +31,7 @@ public class MySQLConnection extends RemoteServiceServlet implements DBConnectio
  
 	/* ***************************** TODO ***************************************** */
 	private String user = "root";  ////Change to your MYSQL database user
-	private String pass = "admin123";  //Change to your mqSQL database password
+	private String pass = "sachin1123";  //Change to your mqSQL database password
 	private String hostname = "localhost"; //change to your server's host name
 	private String portNumber = "3306"; //change to your server's port number
  
@@ -75,9 +75,13 @@ public class MySQLConnection extends RemoteServiceServlet implements DBConnectio
 @Override
 public String createUser(UserType ut, String password) {
 	String resultMsg = "Error creating account, try again.";
-	try {  
-		 
-		 Statement stmt = conn.createStatement();
+	try {
+		  PreparedStatement ps = conn.prepareStatement("Select * from users where username = '" + ut.getEmail() +"';");
+		  ResultSet rs = ps.executeQuery(); 
+		  if(rs.next()) {
+			  return "Email already exists, please use another";
+		  }
+		  Statement stmt = conn.createStatement();
 	      
 	      String sql = "INSERT INTO users (username, loginpassword, usertype) ";
 	      String sql2;
