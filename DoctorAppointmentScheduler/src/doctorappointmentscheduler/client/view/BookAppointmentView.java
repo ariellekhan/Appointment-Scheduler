@@ -44,7 +44,10 @@ public class BookAppointmentView extends Composite implements BookAppointmentPre
 	HorizontalPanel mainHPanel;
 	@UiField
 	HorizontalPanel buttonHPanel;
-	
+	@UiField
+	HorizontalPanel bookHPanel;
+	@UiField
+	Label bookLabel;
 	//Instance Variables
 	private AppointmentCalendarCustomWidget appointmentCalendar;
 	private AppointmentTimeListCustomWidget appointmentTime;
@@ -57,11 +60,13 @@ public class BookAppointmentView extends Composite implements BookAppointmentPre
 		appointmentTime = new AppointmentTimeListCustomWidget();
 		mainHPanel.setSpacing(40);
 		mainVPanel.setSpacing(20);
-		buttonHPanel.setWidth("375px");
-	    buttonHPanel.setCellHorizontalAlignment(chooseButton,HasHorizontalAlignment.ALIGN_RIGHT);
+		buttonHPanel.setWidth("500px");
+	    buttonHPanel.setCellHorizontalAlignment(chooseButton,HasHorizontalAlignment.ALIGN_CENTER);
 		dateVPanel.add(appointmentCalendar);
 		timeVPanel.add(appointmentTime);
-
+		bookHPanel.setWidth("450px");
+	    bookHPanel.setCellHorizontalAlignment(bookLabel,HasHorizontalAlignment.ALIGN_CENTER);
+		
 	}
 	
 	//Mutators

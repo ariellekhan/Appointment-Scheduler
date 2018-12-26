@@ -3,6 +3,7 @@ package doctorappointmentscheduler.client.view;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -58,12 +59,29 @@ public class MakeReportView extends Composite implements MakeReportPresenter.Dis
 	Button submitButton;
 	@UiField
 	HorizontalPanel buttonHPanel;
+	@UiField
+	HorizontalPanel gridHPanel;
+	@UiField
+	Grid grid;
+	@UiField
+	HorizontalPanel mainHPanel;
 	
 	//Constructor
 	public MakeReportView() {
 		initWidget(uiBinder.createAndBindUi(this));
-		buttonHPanel.setWidth("325px");
-	    buttonHPanel.setCellHorizontalAlignment(submitButton,HasHorizontalAlignment.ALIGN_RIGHT);
+		buttonHPanel.setWidth("525px");
+	    buttonHPanel.setCellHorizontalAlignment(submitButton,HasHorizontalAlignment.ALIGN_CENTER);
+	    grid.setCellSpacing(7);
+	    gridHPanel.setBorderWidth(1);
+		mainHPanel.setWidth("33em");
+	    mainHPanel.setCellHorizontalAlignment(gridHPanel,HasHorizontalAlignment.ALIGN_CENTER);
+	    medHistoryTextBox.setWidth("19em");
+	    medHistoryTextBox.setHeight("3.4em");
+	    conditionTextBox.setWidth("19em");
+	    conditionTextBox.setHeight("3.4em");
+	    currMedTextBox.setWidth("19em");
+	    currMedTextBox.setHeight("3.4em");
+
 	}
 	
 	//Accessors

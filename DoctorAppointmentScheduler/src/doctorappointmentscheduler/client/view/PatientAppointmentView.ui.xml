@@ -14,7 +14,7 @@
 			color: grey;
     		text-align: center;
     		font-size: 2em;
-    		font-style: italic;
+    		text-shadow: 1px 1px black;
     		text-decoration: underline;
     		margin-left: 20px;
 		}
@@ -60,10 +60,11 @@
 	
 	<g:HTMLPanel >
 		
-		<g:VerticalPanel ui:field="vPanel" spacing="5" >
+		<g:VerticalPanel ui:field="vPanel" spacing="15" >
 			<g:Label styleName="{style.heading}">Patient's Appointment Form</g:Label>
-			
-			<g:Grid>
+	<g:HorizontalPanel ui:field ="mainHPanel">
+			<g:HorizontalPanel ui:field ="gridHPanel" spacing = "15">
+			<g:Grid ui:field = "grid">
 				<g:row>
 					<g:customCell><g:Label styleName="{style.labels}">Appointment Date:</g:Label></g:customCell>
 					<g:customCell><g:Label ui:field="dateTextLabel"></g:Label></g:customCell>
@@ -102,11 +103,11 @@
 				</g:row>
 				<g:row>
 					<g:customCell><g:Label styleName="{style.labels}">Weight:</g:Label></g:customCell>
-					<g:customCell><g:Label ui:field="weightTextLabel" styleName="{style.labels}"></g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="weightTextLabel"></g:Label></g:customCell>
 				</g:row>
 				<g:row>
 					<g:customCell><g:Label styleName="{style.labels}">Height: </g:Label></g:customCell>
-					<g:customCell><g:Label ui:field="heightTextLabel" styleName="{style.labels}"></g:Label></g:customCell>
+					<g:customCell><g:Label ui:field="heightTextLabel"></g:Label></g:customCell>
 				</g:row>
 				<g:row>
 					<g:customCell><g:Label styleName="{style.labels}">Condition: </g:Label></g:customCell>
@@ -120,7 +121,9 @@
 					<g:customCell><g:Label styleName="{style.labels}">Medical History: </g:Label></g:customCell>
 					<g:customCell><g:TextArea ui:field="medHistoryTextArea" styleName="{style.inputBoxes}"></g:TextArea></g:customCell>
 				</g:row>
-			</g:Grid>			
+			</g:Grid>		
+			</g:HorizontalPanel>
+			</g:HorizontalPanel>	
 		</g:VerticalPanel>
 			
 	</g:HTMLPanel>

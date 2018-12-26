@@ -153,7 +153,7 @@ public String addReport(MedicalReport m, Appointment a, String email) {
 	      stmt.executeUpdate(sql2);
 	     
 	      
-	      resultMsg = "Form successfully submitted";
+	      resultMsg = "Form successfully submitted... Please check for confirmation email";
 	 } catch (SQLException sqle) {  
 		sqle.printStackTrace(); 
 	 }

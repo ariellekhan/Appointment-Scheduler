@@ -2,6 +2,9 @@ package doctorappointmentscheduler;
 
 import static org.junit.Assert.*;
 
+/*This test is run 2nd */
+
+
 import org.junit.Test;
 
 import doctorappointmentscheduler.server.MySQLConnection;

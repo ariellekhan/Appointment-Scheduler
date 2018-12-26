@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import doctorappointmentscheduler.server.MySQLConnection;
 
+/*This test is run 1st */
+
 public class CreateUserJUnitTest {
 
 	DatabaseTestModels db = new DatabaseTestModels();

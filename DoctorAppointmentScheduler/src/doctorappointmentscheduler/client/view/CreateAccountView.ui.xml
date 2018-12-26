@@ -12,7 +12,7 @@
 		color: grey;
     	text-align: center;
     	font-size: 2em;
-    	font-style: italic;
+    	text-shadow: 1px 1px black;
     	text-decoration: underline;
     	margin-left: 20px;
 	}
@@ -21,7 +21,6 @@
 	}
 	.inputBoxes{
 		display:inline-block;
-		
 	
 	}
 	.HPanel{
@@ -49,6 +48,8 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+
 	
 	</ui:style>
 	<g:FormPanel>
@@ -56,10 +57,14 @@
 
 		
 		<g:HTMLPanel >
-		<g:VerticalPanel ui:field="vPanel" spacing="5" >
-			<g:Label styleName="{style.heading}">Create An Account</g:Label>
-			<g:Label> </g:Label>
-			<g:Grid>
+		<g:VerticalPanel  ui:field="vPanel" spacing="15" >
+			<g:VerticalPanel ui:field = "accountVPanel">
+			<g:Label ui:field = "accountLabel" styleName="{style.heading}">Create An Account</g:Label>
+			</g:VerticalPanel>
+			
+			<g:HorizontalPanel ui:field ="mainHPanel">
+			<g:HorizontalPanel ui:field ="gridHPanel" spacing = "15">
+			<g:Grid ui:field = "grid">
 				<g:row>
 					<g:customCell><g:Label styleName="{style.labels}">Email:</g:Label></g:customCell>
 					<g:customCell><g:TextBox ui:field="emailTextBox" styleName="{style.inputBoxes}"></g:TextBox></g:customCell>
@@ -105,12 +110,14 @@
 				</g:row>
 				
 			</g:Grid>
-			<g:Label></g:Label>
+			</g:HorizontalPanel>
+		    </g:HorizontalPanel>
 			
+			<g:VerticalPanel spacing = "10" >
 			<g:HorizontalPanel ui:field = "buttonHPanel">
 				<g:Button styleName="{style.button}" ui:field="createAccountButton">Create Account</g:Button>
 			</g:HorizontalPanel>
-			
+			</g:VerticalPanel>
 						
 		</g:VerticalPanel>
 		

@@ -1,13 +1,18 @@
 package doctorappointmentscheduler.client.view;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy;
-
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -29,6 +34,16 @@ public class RecordsView extends Composite implements RecordsPresenter.Display {
 	VerticalPanel cellVPanel;
 	@UiField
 	VerticalPanel mainVPanel;
+	@UiField
+	TextBox searchBox;
+	@UiField
+	Button searchButton;
+	@UiField
+	Button refreshButton; 
+	@UiField
+	Label appLabel;
+	@UiField 
+	HorizontalPanel appHPanel;
 	
 	//Instance Variables
     private SimplePager pager;
@@ -43,6 +58,10 @@ public class RecordsView extends Composite implements RecordsPresenter.Display {
 		pager = new SimplePager();
 		pager.setDisplay(recordsTable);
 	    cellVPanel.add(recordsTable);
+	    cellVPanel.add(pager);
+		cellVPanel.setBorderWidth(1);
+		appHPanel.setWidth("450px");
+		appHPanel.setCellHorizontalAlignment(appLabel,HasHorizontalAlignment.ALIGN_CENTER);
 	}
 
 	//Accessors
@@ -55,6 +74,22 @@ public class RecordsView extends Composite implements RecordsPresenter.Display {
 	@Override
 	public CellTable<PatientRecord> getTable() {
 		return this.recordsTable;
+	}
+
+	@Override
+	public TextBox getSearchBox() {
+		// TODO Auto-generated method stub
+		return searchBox;
+	}
+
+	@Override
+	public HasClickHandlers getSearchButtonClickHandler() {
+		return searchButton;
+	}
+
+	@Override
+	public HasClickHandlers getRefreshButtonClickHandler() {
+		return refreshButton;
 	}
 
 }

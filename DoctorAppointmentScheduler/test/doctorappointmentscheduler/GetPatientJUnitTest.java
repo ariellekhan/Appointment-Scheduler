@@ -7,6 +7,9 @@ import org.junit.Test;
 import doctorappointmentscheduler.server.MySQLConnection;
 import doctorappointmentscheduler.shared.Patient;
 
+/*This test is run 4th */
+
+
 public class GetPatientJUnitTest {
 	DatabaseTestModels db = new DatabaseTestModels();
 	MySQLConnection mySQL = new MySQLConnection(); 

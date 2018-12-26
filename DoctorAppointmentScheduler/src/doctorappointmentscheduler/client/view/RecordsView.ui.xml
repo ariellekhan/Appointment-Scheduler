@@ -15,7 +15,7 @@
 			color: grey;
     		text-align: center;
     		font-size: 2em;
-    		font-style: italic;
+    		text-shadow: 1px 1px black;
     		text-decoration: underline;
     		margin-left: 50px;
 		}
@@ -30,20 +30,30 @@
 	<g:HTMLPanel>
 		
 		<g:VerticalPanel ui:field="mainVPanel">
-			<g:VerticalPanel>
-				<g:Label text = "Patients Records" styleName="{style.headings}" />
-			</g:VerticalPanel>
-			
-			<g:VerticalPanel ui:field="cellVPanel">
-			</g:VerticalPanel>
-			
-			<g:VerticalPanel>
+			<g:VerticalPanel spacing ="5">
+				<g:HorizontalPanel ui:field= "appHPanel">
+				<g:Label ui:field ="appLabel" text = "Patients Records" styleName="{style.headings}" />
+			</g:HorizontalPanel> 
+				<g:HorizontalPanel spacing ="25"> 
+				
 				<g:HorizontalPanel> 
-			 		<g:Label text = "Search:" styleName="{style.labels}" /> <g:TextBox></g:TextBox> 
-				</g:HorizontalPanel>
+		    	<g:TextBox ui:field="searchBox"></g:TextBox> 
+				<g:Button ui:field="searchButton">Search</g:Button>
+			</g:HorizontalPanel>
+			<g:HorizontalPanel>  
+				<g:Button ui:field="refreshButton" text="Refresh"></g:Button>
+			</g:HorizontalPanel>
+			</g:HorizontalPanel>
 			</g:VerticalPanel>
-		</g:VerticalPanel>
+			<g:VerticalPanel ui:field="cellVPanel">
+				
 			 
+			</g:VerticalPanel>
+				<g:VerticalPanel>
+				
+			</g:VerticalPanel>
+			</g:VerticalPanel>
+		
 	</g:HTMLPanel>
 	
 </ui:UiBinder> 

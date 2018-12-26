@@ -15,7 +15,7 @@
 		color: grey;
     	text-align: center;
     	font-size: 2em;
-    	font-style: italic;
+    	text-shadow: 1px 1px black;
     	text-decoration: underline;
     	margin-left: 50px;
 	}
@@ -52,12 +52,11 @@
 
 
 	</ui:style>
-						    <!-- comments -->						
 		<g:HTMLPanel >
 		<g:VerticalPanel ui:field="mainVPanel">
-			<g:VerticalPanel>
-  				<g:Label text = "Book Appointment" styleName="{style.headings}" />				
-			</g:VerticalPanel>
+			<g:HorizontalPanel ui:field = "bookHPanel">
+  				<g:Label ui:field = "bookLabel" text = "Book Appointment" styleName="{style.headings}" />				
+			</g:HorizontalPanel>
 			<g:HorizontalPanel ui:field="mainHPanel">
 				<g:VerticalPanel ui:field= "dateVPanel">
 				<g:HorizontalPanel><g:Label styleName="{style.labels}">Select Date: </g:Label><g:Label ui:field="appointmentDateLabel" styleName="{style.texts}"></g:Label> </g:HorizontalPanel>
