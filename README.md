@@ -42,7 +42,7 @@ location: DoctorAppointmentScheduler/src/doctorappointmentscheduler/server/MySQL
   5. Navigate to Web page.
 
 
-#### Google Web Toolkit Plugin Setup
+### Google Web Toolkit Plugin Setup
 link for additional help: http://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html
   1. Open Eclipse -> Help -> Eclipse Marketplace
   2. Search using Find: GWT
@@ -61,7 +61,7 @@ link to download: https://dev.mysql.com/downloads/installer/
  If any unexpected errors occurs you can simply delete the schema (DROP SCHEMA doctorbase) and rerun script.
 
 
-#### To run the application on Eclipse
+### To run the application on Eclipse
   1. Open Eclipse
   2. Import -> Git -> Projects from Git -> Clone URI -> URI: https://github.com/ariellekhan/comp3613 -> Next -> Deselect all -> Select Master -> Choose storage directory -> Import existing Eclipse Project -> Next -> Finish
   3. Configure the variables of MySQLConnection.java of the application, to match your machine's database setup.
@@ -73,7 +73,7 @@ link to download: https://dev.mysql.com/downloads/installer/
   6. May take a while to compile again but once completed it will generate a URL (in the Development Mode Console) to view the application.
   
   
-#### Errors?
+### Errors?
  1. "RPC to database fail"  = database not connected, thus ensure correct username, password and host location matches to the machine's and the application. OR schema/tables not created thus run the doctorbaseScript.sql in your database to fix.
  2. "The port appears to be in use" when trying to run an application - another GWT app or instance is running, click on the red stop button in the Development Mode Console to stop it then run this application.
  
