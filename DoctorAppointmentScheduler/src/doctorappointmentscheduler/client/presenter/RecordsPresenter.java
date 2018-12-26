@@ -3,12 +3,16 @@ package doctorappointmentscheduler.client.presenter;
 import java.util.ArrayList;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
@@ -24,17 +28,23 @@ public class RecordsPresenter implements Presenter{
 	public interface Display {
 		Widget asWidget();
 		CellTable<PatientRecord> getTable();
+		TextBox getSearchBox();
+		HasClickHandlers getSearchButtonClickHandler();
+		HasClickHandlers getRefreshButtonClickHandler();
 	}
 
 	//Instance Variables
 	@SuppressWarnings("unused")
 	private final HandlerManager eventBus;
 	private final Display display;
+	private ArrayList<PatientRecord> recordsList;
+
 	
 	//Constructor
 	public RecordsPresenter(HandlerManager eventBus, Display display) {
 		this.display = display;
 		this.eventBus = eventBus;
+		recordsList = new ArrayList<>();
 		setUpTableColumns();
 		setRecordsInfo();
 		bind();
@@ -48,10 +58,25 @@ public class RecordsPresenter implements Presenter{
 	    	public void onSelectionChange(SelectionChangeEvent event) {
 	    		PatientRecord selected = selectionModel.getSelectedObject();
 	    		if (selected != null) {  
-	    			Window.alert(selected.getPatient().getEmail()); //displays a record's email
+	    			Window.alert("Email: " + selected.getPatient().getEmail()); //displays a record's email
 	    		}
 	    	}
 	    });
+	    
+	    this.display.getSearchButtonClickHandler().addClickHandler(
+				new ClickHandler() {
+					public void onClick(ClickEvent event) {
+						doSearch();
+					}
+				});
+	    
+	    this.display.getRefreshButtonClickHandler().addClickHandler(
+				new ClickHandler() {
+					public void onClick(ClickEvent event) {
+						setRecordsInfo();
+						display.getSearchBox().setText("");
+					}
+				});
 	}
 	
 	//creates the table columns for values of a Patient Record
@@ -109,8 +134,36 @@ public class RecordsPresenter implements Presenter{
 				   display.getTable().setRowCount(apps.size(), true);
 				   // Push the data into the widget.
 				   display.getTable().setRowData(0, apps);
+				   recordsList = apps;
+
 			}
 		});
+	}
+	
+	//search for the string supplied
+	private void doSearch() {
+		String search = display.getSearchBox().getText().trim().toLowerCase();
+			if(search.isEmpty()) {
+				display.getTable().setRowCount(recordsList.size(), true);
+				display.getTable().setRowData(0, recordsList);	
+			}
+			else {
+				ArrayList<PatientRecord> records = new ArrayList<>();
+				
+				for(PatientRecord r: recordsList) {
+					String fnameFirst = r.getPatient().getFirstName().trim() + " " + r.getPatient().getLastName().trim();
+					String lnameFirst = r.getPatient().getLastName().trim() + " " + r.getPatient().getFirstName().trim();
+					fnameFirst = fnameFirst.toLowerCase();
+					lnameFirst = lnameFirst.toLowerCase();
+
+					if(fnameFirst.contains(search) || lnameFirst.contains(search)) {
+						records.add(r);
+					}
+				}
+				display.getTable().setRowCount(records.size(), true);
+				display.getTable().setRowData(0, records);	
+			}
+		
 	}
 	
 	//Adds widgets to the container

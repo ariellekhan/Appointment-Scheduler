@@ -8,6 +8,9 @@ import doctorappointmentscheduler.server.MySQLConnection;
 import doctorappointmentscheduler.shared.Appointment;
 import doctorappointmentscheduler.shared.MedicalReport;
 
+/*This test is run 5th */
+
+
 public class AddReportJUnitTest {
 	DatabaseTestModels db = new DatabaseTestModels();
 	MySQLConnection mySQL = new MySQLConnection();
@@ -19,7 +22,7 @@ public class AddReportJUnitTest {
 		Appointment app = db.getAppointment();
 		String email = db.getEmail();
 		
-		assertEquals("Form successfully submitted", mySQL.addReport(m, app, email));
+		assertEquals("Form successfully submitted... Please check for confirmation email", mySQL.addReport(m, app, email));
 	}
 
 }

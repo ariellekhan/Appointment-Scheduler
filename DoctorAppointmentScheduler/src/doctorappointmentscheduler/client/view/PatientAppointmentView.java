@@ -5,6 +5,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Grid;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.Widget;
@@ -51,6 +54,12 @@ public class PatientAppointmentView extends Composite implements PatientAppointm
 	TextArea currMedTextArea;
 	@UiField 
 	TextArea conditionTextArea;
+	@UiField
+	HorizontalPanel gridHPanel;
+	@UiField
+	Grid grid;
+	@UiField
+	HorizontalPanel mainHPanel;
 	
 	//Constructor
 	public PatientAppointmentView() {
@@ -58,6 +67,16 @@ public class PatientAppointmentView extends Composite implements PatientAppointm
 		medHistoryTextArea.setReadOnly(true);
 		currMedTextArea.setReadOnly(true);
 		conditionTextArea.setReadOnly(true);
+	    grid.setCellSpacing(7);
+	    gridHPanel.setBorderWidth(1);
+		mainHPanel.setWidth("33em");
+	    mainHPanel.setCellHorizontalAlignment(gridHPanel,HasHorizontalAlignment.ALIGN_CENTER);
+	    medHistoryTextArea.setWidth("19em");
+	    medHistoryTextArea.setHeight("3.4em");
+	    conditionTextArea.setWidth("19em");
+	    conditionTextArea.setHeight("3.4em");
+	    currMedTextArea.setWidth("19em");
+	    currMedTextArea.setHeight("3.4em");
 	}
 
 	//Accessors

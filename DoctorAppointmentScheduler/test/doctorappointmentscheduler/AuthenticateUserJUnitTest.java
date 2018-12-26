@@ -9,6 +9,9 @@ import org.junit.Test;
 import doctorappointmentscheduler.server.MySQLConnection;
 import doctorappointmentscheduler.shared.User;
 
+/*This test is run 3rd */
+
+
 public class AuthenticateUserJUnitTest {
 
 	DatabaseTestModels db = new DatabaseTestModels();

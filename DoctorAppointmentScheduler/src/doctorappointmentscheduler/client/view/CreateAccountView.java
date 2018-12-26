@@ -6,10 +6,14 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Grid;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 import doctorappointmentscheduler.client.presenter.CreateAccountPresenter;
@@ -49,12 +53,34 @@ public class CreateAccountView extends Composite implements CreateAccountPresent
 	ListBox genderListBox;
 	@UiField 
 	Label codeLabel;
+	@UiField
+	VerticalPanel accountVPanel;
+	@UiField
+	Label accountLabel;
+	@UiField
+	HorizontalPanel buttonHPanel;
+	@UiField
+	HorizontalPanel gridHPanel;
+	@UiField
+	Grid grid;
+	@UiField
+	HorizontalPanel mainHPanel;
 
 	//Constructor
 	public CreateAccountView() {
 		initWidget(uiBinder.createAndBindUi(this));
 		codeTextBox.setVisible(false);
 		codeLabel.setVisible(false);
+		accountVPanel.setWidth("450px");
+		accountVPanel.setCellHorizontalAlignment(accountLabel,HasHorizontalAlignment.ALIGN_CENTER);
+		buttonHPanel.setWidth("450px");
+	    buttonHPanel.setCellHorizontalAlignment(createAccountButton,HasHorizontalAlignment.ALIGN_CENTER);
+	    grid.setCellSpacing(7);
+	    gridHPanel.setBorderWidth(1);
+		mainHPanel.setWidth("30em");
+	    mainHPanel.setCellHorizontalAlignment(gridHPanel,HasHorizontalAlignment.ALIGN_CENTER);
+
+
 	}
 	
 	//Accessors

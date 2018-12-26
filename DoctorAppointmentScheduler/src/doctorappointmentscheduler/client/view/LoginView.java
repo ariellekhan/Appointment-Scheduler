@@ -8,7 +8,9 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 import doctorappointmentscheduler.client.presenter.LoginPresenter;
@@ -35,12 +37,18 @@ public class LoginView extends Composite implements LoginPresenter.Display {
 	TextBox emailBox;
 	@UiField
 	TextBox passwordBox;
+	@UiField
+	VerticalPanel vPanel;
+	@UiField
+	Label loginLabel;
 	
 	//Constructor
 	public LoginView() {
 		initWidget(uiBinder.createAndBindUi(this));
 		buttonHPanel.setWidth("325px");
 	    buttonHPanel.setCellHorizontalAlignment(loginButton,HasHorizontalAlignment.ALIGN_LEFT);
+	    vPanel.setWidth("350px");
+	    vPanel.setCellHorizontalAlignment(loginLabel,HasHorizontalAlignment.ALIGN_CENTER);
 	}
 	
 	//Accessors

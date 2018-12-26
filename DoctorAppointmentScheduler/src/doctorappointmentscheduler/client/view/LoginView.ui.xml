@@ -13,7 +13,7 @@
 		color: grey;
     	text-align: center;
     	font-size: 2em;
-    	font-style: italic;
+    	text-shadow: 1px 1px black;
     	text-decoration: underline;
     	margin-left: 50px;
 	}
@@ -58,8 +58,8 @@
 						    <!-- comments -->						
 		<g:HTMLPanel >
 		<g:VerticalPanel ui:field="mainVPanel" spacing="15">
-			<g:VerticalPanel>
-  				<g:Label  text = "Login" styleName="{style.headings}" />				
+			<g:VerticalPanel ui:field = "vPanel">
+  				<g:Label ui:field = "loginLabel"  text = "Login" styleName="{style.headings}" />				
 			</g:VerticalPanel>
 			
 			<g:VerticalPanel>
@@ -89,7 +89,7 @@
 				<g:Button ui:field="signUpButton">Sign Up</g:Button>
 			</g:HorizontalPanel>
 			</g:VerticalPanel>
-			
+		
 		</g:VerticalPanel>
 
 		

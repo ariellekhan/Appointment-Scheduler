@@ -60,7 +60,7 @@ public class PatientManagementSystem implements Presenter, ValueChangeHandler<St
 		//on event that a user wants to sign up for an account
 		eventBus.addHandler(SignUpEvent.TYPE, new SignUpEventHandler() {
 			public void onSignUp(SignUpEvent event) {
-				History.newItem("SignUpPage", true);
+				doSignUp();
 			}
 		});
 		
@@ -133,6 +133,7 @@ public class PatientManagementSystem implements Presenter, ValueChangeHandler<St
 	
 	//displays a new CreateAccount View
 	public void doCreateAccountView() {
+		History.newItem("SignUpPage");
 		presenter = new CreateAccountPresenter(eventBus, new CreateAccountView());
 		presenter.go(container);
 	}
@@ -140,13 +141,14 @@ public class PatientManagementSystem implements Presenter, ValueChangeHandler<St
 	
 	//displays a new Login View
 	private void doLoginView() {
+		History.newItem("LoginPage");
 		presenter = new LoginPresenter(eventBus, new LoginView());	
 		presenter.go(container);
 	}
 	
 	//displays a new BookAppointment View
 	private void doBookAppointmentView() {
-		History.newItem("BookAppointmentPage", true);
+		History.newItem("BookAppointmentPage");
 		presenter = new BookAppointmentPresenter(eventBus, new BookAppointmentView());
 		presenter.go(container);
 	}
@@ -154,27 +156,28 @@ public class PatientManagementSystem implements Presenter, ValueChangeHandler<St
 
 	//displays a new Report View
 	private void doReportView(String dateString, String timeString) {
-		History.newItem("ReportPage", false);
+		History.newItem("ReportPage");
 		presenter = new MakeReportPresenter(eventBus, new MakeReportView(), dateString, timeString, user);
 		presenter.go(container);
 	}
 	
 	//display a new DisplayAppointment View
 	private void doDisplayAppointmentView() {
-		History.newItem("DisplayAppointmentPage", true);
+		History.newItem("DisplayAppointmentPage");
 		presenter = new DisplayAppointmentPresenter(eventBus, new DisplayAppointmentView());
 		presenter.go(container);
 	}
 	
 	//displays a new doctors' MedicalReport View
 	private void doDoctorMedicalReportView(String email, Appointment app){
-		History.newItem("DoctorMedicalReportPage", false);
+		History.newItem("DoctorMedicalReportPage");
 		presenter = new PatientAppointmentPresenter(eventBus, new PatientAppointmentView(), email , app);
 		presenter.go(container);
 	}
 	
 	//display a new Records view
 	private void doRecordsView() {
+		History.newItem("RecordsPage");
 		presenter = new RecordsPresenter(eventBus, new RecordsView());
 		presenter.go(container);
 	}
@@ -198,7 +201,7 @@ public class PatientManagementSystem implements Presenter, ValueChangeHandler<St
 
 		if (token != null) {
 			if (token.equals("LoginPage")) {
-				History.newItem("LoginPage", false);
+
 				doLoginView();
 			}
 			else if (token.equals("SignUpPage")) {
@@ -206,7 +209,7 @@ public class PatientManagementSystem implements Presenter, ValueChangeHandler<St
 			}
 			else if(user == null) {
 				Window.alert("Please login");
-				History.newItem("LoginPage", false);
+				
 				doLoginView();
 			}
 			else if (token.equals("BookAppointmentPage")) {
