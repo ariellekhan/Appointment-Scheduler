@@ -48,7 +48,7 @@ link for additional help: http://gwt-plugins.github.io/documentation/gwt-eclipse
   2. Search using Find: GWT
   3. GWT Eclipse Plugin 3.0.0 -> Install -> (select all boxes) -> confirm
   
-#### MySQL WorkBench Setup
+### MySQL WorkBench Setup
 link to download: https://dev.mysql.com/downloads/installer/
   1. Navigate to download page using link above -> Select OS -> Download msi -> No thanks, just start my download
   2. Run download setup -> set up wizard opens -> accept license -> Choose Developer Default Setup Type -> next -> Install -> Configure
