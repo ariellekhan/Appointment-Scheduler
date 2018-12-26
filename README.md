@@ -63,17 +63,18 @@ link to download: https://dev.mysql.com/downloads/installer/
 
 #### To run the application on Eclipse
   1. Open Eclipse
-  2. Import -> Git -> Projects from Git -> Clone URI -> URI: https://github.com/ariellekhan/comp3613 -> Next -> Deselect all -> Select Master -> Choose storage directory -> Import existing Eclipse Project -> Finish
+  2. Import -> Git -> Projects from Git -> Clone URI -> URI: https://github.com/ariellekhan/comp3613 -> Next -> Deselect all -> Select Master -> Choose storage directory -> Import existing Eclipse Project -> Next -> Finish
   3. Configure the variables of MySQLConnection.java of the application, to match your machine's database setup.
   
   location: DoctorAppointmentScheduler/src/doctorappointmentscheduler/server/MySQLConnection.java 
   
-  4. Right click on project file in Package Explorer once it loaded properly -> Run as -> GWT Compiler
+  4. Right click on project file (DoctorAppointmentScheduler) in Package Explorer once it loaded properly -> Run as -> GWT Compiler (takes about a minute or more)
   5. Right click on project file again -> Run as -> GWT Development Mode with Jetty
   6. May take a while to compile again but once completed it will generate a URL (in the Development Mode Console) to view the application.
   
   
 #### Errors?
- 1. "RPC to database fail"  = database not connected, thus ensure correct username, password and host location matches to the machine's and the application.
-  
+ 1. "RPC to database fail"  = database not connected, thus ensure correct username, password and host location matches to the machine's and the application. OR schema/tables not created thus run the doctorbaseScript.sql in your database to fix.
+ 2. "The port appears to be in use" when trying to run an application - another GWT app or instance is running, click on the red stop button in the Development Mode Console to stop it then run this application.
+ 
  Note - DoctorAppointmentScheduler is the main project folder.
