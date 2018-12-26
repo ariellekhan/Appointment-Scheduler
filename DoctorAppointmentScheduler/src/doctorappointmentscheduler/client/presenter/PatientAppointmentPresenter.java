@@ -99,7 +99,7 @@ public class PatientAppointmentPresenter implements Presenter {
 					//fill the form with the patient Medical report data
 					display.getWeightTextLabel().setText(mr.getWeight());
 					display.getHeightTextLabel().setText(mr.getHeight());
-					display.getMedicalHistoryTextArea().setText(mr.getCondition());
+					display.getMedicalHistoryTextArea().setText(mr.getMedicalHistory());
 					display.getCurrentMedicationTextArea().setText(mr.getCurrentMedication());
 					display.getConditionTextArea().setText(mr.getCondition());
 				}
