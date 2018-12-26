@@ -51,13 +51,13 @@ link for additional help: http://gwt-plugins.github.io/documentation/gwt-eclipse
 #### MySQL WorkBench Setup
 link to download: https://dev.mysql.com/downloads/installer/
   1. Navigate to download page using link above -> Select OS -> Download msi -> No thanks, just start my download
-  2. Run download setup -> set up wizard opens -> accept license -> Choose Developer Default Setup Type -> Check requirements and download any missing ones -> Install -> Configure
+  2. Run download setup -> set up wizard opens -> accept license -> Choose Developer Default Setup Type -> next -> Install -> Configure
   3. Open MySQL Workbench -> click on MySQL Connections + -> Setup New Connection 
   4. Either set Hostname to localhost and port to 3306; Username: root and password: admin123
-  4. OR whatever you prefer (however you would need to change the java connection variables in the application to your machine's configurations;
-  5. Leave default schema blank. (The sql script will create one).
-  6. Test connection -> OK
- ####  7.  IMPORTANT! Open connection -> File -> Run SQL Script -> doctorbaseScript.sql (can be downloaded directly from repository or link: https://www.dropbox.com/s/emnw0jjvrvdp4em/doctorbaseScript.sql?dl=0 ) This is required to create the schema and tables for the application. 
+  5. OR whatever you prefer (however you would need to change the java connection variables in the application to your machine's configurations;
+  6. Leave default schema blank. (The sql script will create one).
+  7. Test connection -> OK
+ ####  8.  IMPORTANT! Open connection -> File -> Run SQL Script -> doctorbaseScript.sql (can be downloaded directly from repository or link: https://www.dropbox.com/s/emnw0jjvrvdp4em/doctorbaseScript.sql?dl=0 ) This is required to create the schema and tables for the application. 
  If any unexpected errors occurs you can simply delete the schema (DROP SCHEMA doctorbase) and rerun script.
 
 
