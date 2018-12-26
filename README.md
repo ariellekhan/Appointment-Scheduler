@@ -47,3 +47,33 @@ link for additional help: http://gwt-plugins.github.io/documentation/gwt-eclipse
   1. Open Eclipse -> Help -> Eclipse Marketplace
   2. Search using Find: GWT
   3. GWT Eclipse Plugin 3.0.0 -> Install -> (select all boxes) -> confirm
+  
+#### MySQL WorkBench Setup
+link to download: https://dev.mysql.com/downloads/installer/
+  1. Navigate to download page using link above -> Select OS -> Download msi -> No thanks, just start my download
+  2. Run download setup -> set up wizard opens -> accept license -> Choose Developer Default Setup Type -> Check requirements and download any missing ones -> Install -> Configure
+  3. Open MySQL Workbench -> click on MySQL Connections + -> Setup New Connection 
+  4. Either set Hostname to localhost and port to 3306; Username: root and password: admin123
+  4. OR whatever you prefer (however you would need to change the java connection variables in the application to your machine's configurations;
+  5. Leave default schema blank. (The sql script will create one).
+  6. Test connection -> OK
+ ####  7.  IMPORTANT! Open connection -> File -> Run SQL Script -> doctorbaseScript.sql (can be downloaded directly from repository or link: https://www.dropbox.com/s/emnw0jjvrvdp4em/doctorbaseScript.sql?dl=0 ) This is required to create the schema and tables for the application. 
+ If any unexpected errors occurs you can simply delete the schema (DROP SCHEMA doctorbase) and rerun script.
+
+
+#### To run the application on Eclipse
+  1. Open Eclipse
+  2. Import -> Git -> Projects from Git -> Clone URI -> URI: https://github.com/ariellekhan/comp3613 -> Next -> Deselect all -> Select Master -> Choose storage directory -> Import existing Eclipse Project -> Finish
+  3. Configure the variables of MySQLConnection.java of the application, to match your machine's database setup.
+  
+  location: DoctorAppointmentScheduler/src/doctorappointmentscheduler/server/MySQLConnection.java 
+  
+  4. Right click on project file in Package Explorer once it loaded properly -> Run as -> GWT Compiler
+  5. Right click on project file again -> Run as -> GWT Development Mode with Jetty
+  6. May take a while to compile again but once completed it will generate a URL (in the Development Mode Console) to view the application.
+  
+  
+#### Errors?
+ 1. "RPC to database fail"  = database not connected, thus ensure correct username, password and host location matches to the machine's and the application.
+  
+ Note - DoctorAppointmentScheduler is the main project folder.
